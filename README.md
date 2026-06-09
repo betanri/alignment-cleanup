@@ -12,7 +12,7 @@ The example trees below are maximum-likelihood trees built after concatenating a
 
 ## Why This Exists
 
-The main motivation was practical alignment QC for shallow genomic comparisons where problematic terminal sites can inflate apparent autapomorphies and distort branch lengths. In the original Galeichthys use case, the goal was not to claim that one generic aligner-cleaner solved everything, but to show a transparent, parameterized sequence of decisions:
+The main motivation was practical alignment QC for shallow genomic comparisons where problematic terminal sites can inflate apparent autapomorphies and distort branch lengths. The goal was not to claim that one generic aligner-cleaner solved everything, but to show a transparent, parameterized sequence of decisions:
 
 - first trim low-occupancy ends and mask tiny fragments
 - then apply `TAPER`
@@ -42,7 +42,7 @@ These figures use 50 anonymized loci included in this repository. Taxa were rena
 
 ## Full Local Run Summary
 
-On the original local Galeichthys run that motivated this repo:
+On the original local run that motivated this repo:
 
 - `892` cleaned NT loci entered the custom trim step
 - `732` loci were retained after the custom trim
@@ -55,7 +55,7 @@ The example data committed here is a public-facing subset of `50` loci sampled f
 ## Repository Layout
 
 ```text
-galeichthys-alignment-cleanup/
+alignment-cleanup/
 ├── README.md
 ├── data/
 │   └── examples/
@@ -146,7 +146,7 @@ Thresholds are exposed:
 
 Script: [`scripts/run_pipeline_interactive.sh`](scripts/run_pipeline_interactive.sh)
 
-This wrapper asks the user for thresholds at each step instead of silently locking in the original Galeichthys values. It prompts for:
+This wrapper asks the user for thresholds at each step instead of silently locking in the original example values. It prompts for:
 
 - Step 1:
   - column occupancy mode and threshold
@@ -197,7 +197,7 @@ If `IQ-TREE` is unavailable, it will fall back to `FastTree`.
 
 ## Credits
 
-- Custom trim and flank-mask scripting in this repository: local workflow packaging for the Galeichthys cleanup use case
+- Custom trim and flank-mask scripting in this repository: local workflow packaging for a shallow-alignment cleanup use case
 - `TAPER`: [chaoszhang/TAPER](https://github.com/chaoszhang/TAPER)
 - Siavash Mirarab GitHub: [smirarab](https://github.com/smirarab)
 - ML example trees: `IQ-TREE` with `GTR+G`, with optional `FastTree` fallback

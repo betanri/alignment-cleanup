@@ -4,7 +4,7 @@ set -euo pipefail
 BASE_DIR="${1:-$(pwd)}"
 INPUT_DIR="${2:-}"
 JULIA_BIN="${JULIA_BIN:-/Applications/Julia-1.9.app/Contents/Resources/julia/bin/julia}"
-TAPER_SCRIPT="${TAPER_SCRIPT:-/Users/ricardobetancur/Desktop/Galeichthys/TAPER/correction_multi.jl}"
+TAPER_SCRIPT="${TAPER_SCRIPT:-/path/to/TAPER/correction_multi.jl}"
 
 if [[ -z "${INPUT_DIR}" ]]; then
   echo "Usage: $0 REPO_BASE INPUT_ALIGNMENT_DIR"

@@ -54,20 +54,9 @@ def main() -> int:
     chosen = final_files[: args.n_loci]
     first_locus = read_fasta(steps["04_Gene_Alignments_TRIMMED_CODEX_TAPER_FLANKMASK"] / chosen[0])
     orig_names = [name for name, _ in first_locus]
-    rename = {
-        "Galeichthys_ater_RB0513": "Sp1_ind1",
-        "Galeichthys_feliceps_RB0508": "Sp2_ind1",
-        "Galeichthys_feliceps_RB0509": "Sp2_ind2",
-        "Galeichthys_feliceps_RB0510": "Sp2_ind3",
-        "Galeichthys_feliceps_RB0512": "Sp2_ind4",
-        "Galeichthys_trowi_RB0504": "Sp3_ind1",
-        "Galeichthys_trowi_RB0505": "Sp3_ind2",
-        "Galeichthys_trowi_RB0507": "Sp3_ind3",
-        "Galeichthys_peruvianus_EPLATE_86_C03": "Sp4_ind1",
-        "Neoarius_graeffei": "Sp5_ind1",
-    }
-    if set(orig_names) != set(rename):
-        raise SystemExit("Unexpected taxon set; update anonymization mapping before publishing.")
+    if len(orig_names) != 10:
+        raise SystemExit("Expected 10 taxa in the example set; update this helper before publishing.")
+    rename = {name: f"Sp{i+1}_ind1" for i, name in enumerate(orig_names)}
 
     for outname, srcdir in steps.items():
         outdir = repo_data_dir / outname
