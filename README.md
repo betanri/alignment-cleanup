@@ -25,6 +25,7 @@ This repository is set up so those decisions are not hard-coded. Each step expos
 ## Example Tree Progression
 
 These figures use 50 anonymized loci included in this repository. Taxa were renamed to placeholders such as `Sp1_ind1`, `Sp2_ind3`, etc. so the example data can be shared publicly.
+Differences among cleanup stages are particularly easy to see for the three individuals of `Sp3` (`Sp3_ind1`, `Sp3_ind2`, and `Sp3_ind3`).
 
 ### 1. Non-Trimmed
 
