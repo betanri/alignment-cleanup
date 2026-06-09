@@ -1,6 +1,6 @@
-# Galeichthys Alignment Cleanup Pipeline
+# alignment-cleanup
 
-This repository packages a three-step cleanup workflow for locus-by-locus nucleotide alignments, using an anonymized 50-locus example dataset derived from unpublished Galeichthys exon alignments.
+This repository packages a three-step cleanup workflow for locus-by-locus nucleotide alignments, using an anonymized 50-locus example dataset derived from unpublished exon alignments.
 
 The workflow implemented here is:
 
@@ -111,7 +111,7 @@ Step 2 is run with [`TAPER`](https://github.com/chaoszhang/TAPER), which is cred
 - GitHub: [chaoszhang/TAPER](https://github.com/chaoszhang/TAPER)
 - Siavash Mirarab GitHub: [smirarab](https://github.com/smirarab)
 
-In the Galeichthys example run, `TAPER` was run with:
+In the example run documented here, `TAPER` was run with:
 
 ```bash
 julia correction_multi.jl -l -m N -a N -c 1.5 taper_file_list.txt
