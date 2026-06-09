@@ -13,8 +13,14 @@ def main() -> int:
     ap.add_argument("input_tree")
     ap.add_argument("output_png")
     ap.add_argument("--title", default="")
+    ap.add_argument("--outgroup", default="")
     args = ap.parse_args()
     tree = Phylo.read(args.input_tree, "newick")
+    if args.outgroup:
+        matches = [clade for clade in tree.find_clades() if getattr(clade, "name", None) == args.outgroup]
+        if not matches:
+            raise SystemExit(f"Outgroup '{args.outgroup}' not found in tree.")
+        tree.root_with_outgroup(matches[0])
     fig = plt.figure(figsize=(10, 7))
     ax = fig.add_subplot(1, 1, 1)
     Phylo.draw(tree, axes=ax, do_show=False, show_confidence=False)
