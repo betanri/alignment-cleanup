@@ -1,0 +1,114 @@
+IQ-TREE multicore version 2.4.0 for MacOS ARM 64-bit built Mar  8 2025
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor, Heiko Schmidt,
+Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    MacBook-Pro-4.local (SSE4.2, 128 GB RAM)
+Command: /Applications/iqtree-2.4.0-macOS/iqtree2 -s /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.concat.fasta -m GTR+G -nt AUTO -seed 12345 -redo --prefix /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER
+Seed:    12345 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Jun  9 15:16:35 2026
+Kernel:  SSE2 - auto-detect threads (16 CPU cores detected)
+
+Reading alignment file /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.concat.fasta ... Fasta format detected
+Reading fasta file: done in 0.00248194 secs using 89.33% CPU
+Alignment most likely contains DNA/RNA sequences
+WARNING: 1 sites contain only gaps or ambiguous characters.
+Alignment has 10 sequences with 30418 columns, 1052 distinct patterns
+319 parsimony-informative, 484 singleton sites, 29615 constant sites
+          Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 6.81877e-05 secs using 67.46% CPU
+   1  Sp1_ind1   23.57%    passed     70.72%
+   2  Sp2_ind3   82.75%    failed      0.00%
+   3  Sp3_ind2   36.94%    passed      5.92%
+   4  Sp2_ind1    9.93%    passed     70.11%
+   5  Sp5_ind1   83.69%    failed      0.00%
+   6  Sp3_ind1   26.20%    passed     23.30%
+   7  Sp3_ind3    9.29%    passed      8.06%
+   8  Sp2_ind2   10.64%    passed     23.41%
+   9  Sp2_ind4   10.50%    passed     23.23%
+  10  Sp4_ind1   12.08%    failed      3.92%
+WARNING: 2 sequences contain more than 50% gaps/ambiguity
+****  TOTAL      30.56%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.000 seconds
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 16 CPU cores
+Increase to 10 rounds for branch lengths
+2159 trees examined
+Threads: 1 / Time: 16.003 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -50320
+Threads: 2 / Time: 16.984 sec / Speedup: 0.942 / Efficiency: 47% / LogL: -50320
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -48905.553
+2. Current log-likelihood: -48544.633
+3. Current log-likelihood: -48541.740
+4. Current log-likelihood: -48541.274
+Optimal log-likelihood: -48541.187
+Rate parameters:  A-C: 0.87120  A-G: 2.65246  A-T: 0.85795  C-G: 0.63776  C-T: 2.69065  G-T: 1.00000
+Base frequencies:  A: 0.254  C: 0.234  G: 0.238  T: 0.274
+Gamma shape alpha: 0.020
+Parameters optimization took 4 rounds (0.049 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.000409126 secs using 98.75% CPU
+Computing ML distances took 0.000470 sec (of wall-clock time) 0.000447 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 1.50204e-05 secs using 73.23% CPU
+Computing RapidNJ tree took 0.000054 sec (of wall-clock time) 0.000039 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -48541.142
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.029 second
+Computing log-likelihood of 89 initial trees ... 0.102 seconds
+Current best score: -48541.142
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -48541.141
+Iteration 10 / LogL: -48541.828 / Time: 0h:0m:33s
+Iteration 20 / LogL: -48541.809 / Time: 0h:0m:33s
+Finish initializing candidate tree set (1)
+Current best tree score: -48541.141 / CPU time: 0.352
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -48541.219 / Time: 0h:0m:33s (0h:1m:22s left)
+UPDATE BEST LOG-LIKELIHOOD: -48541.141
+Iteration 40 / LogL: -48541.513 / Time: 0h:0m:33s (0h:0m:52s left)
+Iteration 50 / LogL: -48541.772 / Time: 0h:0m:33s (0h:0m:35s left)
+Iteration 60 / LogL: -48541.671 / Time: 0h:0m:33s (0h:0m:23s left)
+Iteration 70 / LogL: -48541.750 / Time: 0h:0m:34s (0h:0m:15s left)
+Iteration 80 / LogL: -48541.523 / Time: 0h:0m:34s (0h:0m:9s left)
+Iteration 90 / LogL: -48541.745 / Time: 0h:0m:34s (0h:0m:4s left)
+Iteration 100 / LogL: -48541.740 / Time: 0h:0m:34s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:34s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -48541.141
+Optimal log-likelihood: -48541.140
+Rate parameters:  A-C: 0.87197  A-G: 2.65514  A-T: 0.85925  C-G: 0.63906  C-T: 2.69660  G-T: 1.00000
+Base frequencies:  A: 0.254  C: 0.234  G: 0.238  T: 0.274
+Gamma shape alpha: 0.020
+Parameters optimization took 1 rounds (0.008 sec)
+BEST SCORE FOUND : -48541.140
+Total tree length: 0.057
+
+Total number of iterations: 102
+CPU time used for tree search: 1.454 sec (0h:0m:1s)
+Wall-clock time used for tree search: 1.458 sec (0h:0m:1s)
+Total CPU time used: 36.625 sec (0h:0m:36s)
+Total wall-clock time used: 34.520 sec (0h:0m:34s)
+
+Analysis results written to: 
+  IQ-TREE report:                /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.iqtree
+  Maximum-likelihood tree:       /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.treefile
+  Likelihood distances:          /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.mldist
+  Screen log file:               /Users/ricardobetancur/Desktop/Proxy_Misplaced/chronosPL/galeichthys-alignment-cleanup/docs/trees/03_Gene_Alignments_TRIMMED_CODEX_TAPER.log
+
+Date and Time: Tue Jun  9 15:17:10 2026

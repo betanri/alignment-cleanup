@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeichthys Alignment Cleanup Pipeline</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 0; background: #f6f2ea; color: #1d241d; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 44px; }
+    .panel { background: #fffdf8; border: 1px solid #d9cfbf; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(30,20,10,.08); }
+    h1, h2 { line-height: 1.15; }
+    h2 { margin-top: 28px; border-top: 1px solid #e1d8ca; padding-top: 16px; }
+    code, pre { font-family: ui-monospace, monospace; }
+    code { background: #f3efe7; padding: .1rem .35rem; border-radius: 6px; }
+    pre { background: #202622; color: #eef5ef; padding: 14px; border-radius: 12px; overflow: auto; }
+    img { max-width: 100%; border: 1px solid #ddd2c1; border-radius: 12px; background: white; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 12px; }
+    .card { background: #fbf8f1; border: 1px solid #ddd2c1; border-radius: 12px; padding: 12px 14px; }
+    .k { color: #5e685e; font-size: .84rem; text-transform: uppercase; letter-spacing: .04em; }
+    .v { font-size: 1.55rem; color: #245c4a; font-weight: 700; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>Galeichthys Alignment Cleanup Pipeline</h1>
+      <p>
+        This repository documents a three-step cleanup workflow for shallow genomic alignments:
+        custom trimming with locus dropping, <code>TAPER</code> masking, and a final custom
+        flank masker aimed at terminal private mismatches / singleton edge junk.
+      </p>
+
+      <div class="grid">
+        <div class="card"><div class="k">Input loci</div><div class="v">892</div></div>
+        <div class="card"><div class="k">Retained after trim</div><div class="v">732</div></div>
+        <div class="card"><div class="k">Dropped after trim</div><div class="v">160</div></div>
+        <div class="card"><div class="k">Flank-mask changed loci</div><div class="v">540</div></div>
+      </div>
+
+      <h2>Steps</h2>
+      <ol>
+        <li>Custom trim: occupancy-based edge trim, short-fragment masking, and keep/drop split.</li>
+        <li><code>TAPER</code> at cutoff <code>1.5</code> on the retained loci.</li>
+        <li>Custom flank mask on the <code>TAPER</code> output.</li>
+      </ol>
+
+      <h2>Example Trees</h2>
+      <p>
+        The repository includes 50 anonymized loci carried across all four stages. The figures
+        below are ML trees from concatenated alignments at each stage.
+      </p>
+      <p><img src="figures/01_Gene_Alignments_Non-Trimmed.png" alt="Non-trimmed example tree" /></p>
+      <p><img src="figures/02_Gene_Alignments_TRIMMED_CODEX.png" alt="Trimmed example tree" /></p>
+      <p><img src="figures/03_Gene_Alignments_TRIMMED_CODEX_TAPER.png" alt="TAPER example tree" /></p>
+      <p><img src="figures/04_Gene_Alignments_TRIMMED_CODEX_TAPER_FLANKMASK.png" alt="Flank-mask example tree" /></p>
+
+      <h2>Credits</h2>
+      <p>
+        Step 2 uses <a href="https://github.com/chaoszhang/TAPER">TAPER</a> by Zhang et al.
+        Credit and upstream context: <a href="https://github.com/smirarab">Siavash Mirarab's GitHub</a>.
+      </p>
+
+      <h2>Interactive Runner</h2>
+      <pre>./scripts/run_pipeline_interactive.sh /path/to/repo /path/to/input_alignments</pre>
+      <p>
+        The runner prompts for thresholds instead of silently locking in a single value. Users
+        can choose absolute taxon counts or percentages where that choice matters.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
