@@ -4,7 +4,7 @@ This repository packages a three-step cleanup workflow for locus-by-locus nucleo
 
 The workflow implemented here is:
 
-1. `CODEX trim`: custom terminal trimming + short-fragment masking + locus dropping
+1. `Occupancy Trim`: custom terminal trimming + short-fragment masking + locus dropping
 2. `TAPER`: masking of likely erroneous local alignment regions
 3. `Flank mask`: custom masking of terminal private mismatches / singleton edge junk
 
@@ -28,15 +28,15 @@ These figures use 50 anonymized loci included in this repository. Taxa were rena
 
 ![Step 1 Tree](docs/figures/01_Gene_Alignments_Non-Trimmed.png)
 
-### 2. CODEX Trimmed
+### 2. Occupancy Trimmed
 
 ![Step 2 Tree](docs/figures/02_Gene_Alignments_TRIMMED_CODEX.png)
 
-### 3. CODEX Trimmed + TAPER (`-c 1.5`)
+### 3. Occupancy Trimmed + TAPER (`-c 1.5`)
 
 ![Step 3 Tree](docs/figures/03_Gene_Alignments_TRIMMED_CODEX_TAPER.png)
 
-### 4. CODEX Trimmed + TAPER + Flank Mask
+### 4. Occupancy Trimmed + TAPER + Flank Mask
 
 ![Step 4 Tree](docs/figures/04_Gene_Alignments_TRIMMED_CODEX_TAPER_FLANKMASK.png)
 
