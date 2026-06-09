@@ -18,6 +18,8 @@ The main motivation was practical alignment QC for shallow genomic comparisons w
 - then apply `TAPER`
 - then explicitly clean residual flank-local singleton noise that `TAPER` may not target well
 
+This pipeline does **not** validate coding frame integrity or flag stop codons. If stop-codon screening or codon-aware exon validation is needed, that should be done separately with tools designed for that purpose.
+
 This repository is set up so those decisions are not hard-coded. Each step exposes thresholds that can be changed interactively or passed at the command line.
 
 ## Example Tree Progression
